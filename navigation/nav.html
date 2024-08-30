@@ -1,0 +1,186 @@
+<html>
+    <head>
+        <title>Navigation bar</title>
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            body{
+                background-color: lightcyan;
+            }
+
+            a{
+                text-decoration: none;
+                color: darkblue;
+            }
+
+            li{
+                list-style-type: none;
+            }
+
+            #logo img{
+                width: 30px;
+                margin-left: 10px;
+            }
+
+            #navbar_parent{
+                display: flex;
+                height: 50px;
+                width: auto;
+                background-color: lightblue;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0px 10px;
+            }
+
+            .menu{
+                display: flex;
+                gap: 3rem;
+            }
+
+            .abouts{
+                position: relative;
+            }
+            .dropdown1{
+                position: absolute;
+                background-color: lightgray;
+                padding: 10px;
+                border-radius: 3px;
+                display: none;
+                left: 20px;
+                top: 38px;
+            }
+            .dropdown1 li{
+                width: 80px;
+                padding: 6px 0px;
+            }
+            .dropdown1 li a{
+                text-align: center;
+            }
+            .dropdown1 li a:hover{
+                color: lightpink;
+            }
+            .abouts:hover .dropdown1{
+                display: block;
+            }
+            .abouts:hover .ri-arrow-down-s-fill{
+                display: inline;
+            }
+            .abouts:hover .ri-arrow-up-s-fill{
+                display: none;
+            }
+
+            .menus{
+                position: relative;
+            }
+            .dropdown2{
+                position: absolute;
+                background-color: lightgray;
+                padding: 10px;
+                border-radius: 3px;
+                display: none;
+                left: 20px;
+                top: 38px;
+            }
+            .dropdown2 li{
+                width: 80px;
+                padding: 6px 0px;
+            }
+            .dropdown2 li a{
+                text-align: center;
+            }
+            .dropdown2 li a:hover{
+                color: pink;
+            }
+            .menus:hover .dropdown2{
+                display: block;
+            }
+            .abouts:hover .ri-arrow-down-s-fill{
+                display: inline;
+            }
+            .abouts:hover .ri-arrow-up-s-fill{
+                display: none;
+            }
+
+            .menu li{
+               padding: 10px;
+               border-radius: 3px;
+            }
+            .menu li:hover{
+                background-color: lightpink;
+            }
+            
+            .hamburger{
+                font-size: 25px;
+                display: none;
+            }
+            input[type="checkbox"]{
+                display: none;
+            }
+            .ri-arrow-down-s-fill{
+                display: none;
+            }
+
+            @media (max-width:700px){
+                .menu {
+                    position: absolute;
+                    left: 0px;
+                    right: 0px;
+                    display: none;
+                    background-color: lightgray;
+                    text-align: center;
+                }
+                .hamburger{
+                    display: block;
+                }
+                input[type="checkbox"]:checked~.menu{
+                    display: block;
+                }
+                .dropdown1{
+                    left: 60%;
+                    background-color: lightgray;
+                }
+                .dropdown2{
+                    left: 60%;
+                    background-color: lightgray;
+                }
+                .menu li:hover{
+                    background-color: gray;
+                }
+                .dropdownli a{
+                    text-align: left;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div id="navbar_parent">
+            <div id="logo"><img src="12.png"></div>
+            <ul class="nav-links">
+                <input type="checkbox" id="checkbox-toggle">
+                <label for="checkbox-toggle" class="hamburger">&#9776;</label>
+              <div class="menu">
+                 <li><a href="home.html">Home</a></li>
+                 <li class="abouts">
+                    <a href="abouts.html">abouts</a> <i class="ri-arrow-up-s-fill"></i><i class="ri-arrow-down-s-fill"></i>
+                    <ul class="dropdown1">
+                      <li><a href="#">About restaurant</a></li> 
+                      <li><a href="#">Deadline</a></li>             
+                    </ul>
+                 </li>
+                 <li class="menus">
+                    <a href="menu.html">menu</a> <i class="ri-arrow-up-s-fill"></i><i class="ri-arrow-down-s-fill"></i>
+                    <ul class="dropdown2">
+                        <li><a href="#">veg menu</li>
+                        <li><a href="#">NonVeg menu</a></li>    
+                    </ul>
+                 </li>
+                 <li><a href="contact.html">Contact us</a></li>
+                </div>
+            </ul>
+        </div>
+    </body>
+</html>
